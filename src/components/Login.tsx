@@ -32,34 +32,35 @@ export default function Login(props: LoginProps) {
   };
 
   return (
-    <div class="min-h-screen flex items-center justify-center bg-gray-100">
-      <div class="bg-white p-6 rounded shadow-md w-80">
-        <h2 class="text-xl font-bold mb-4">Login</h2>
-        <input
-          type="email"
-          placeholder="Email"
-          class="w-full p-2 mb-4 border rounded"
-          onInput={(e) => setEmail(e.currentTarget.value)}
-        />
-        <input
-          type="password"
-          placeholder="Senha"
-          class="w-full p-2 mb-4 border rounded"
-          onInput={(e) => setPassword(e.currentTarget.value)}
-        />
-        <button
-          onClick={handleLogin}
-          class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
-        >
-          Entrar
-        </button>
-        <div class="mt-4 text-center">
+    <div class="min-h-screen flex items-center justify-center bg-gray-900">
+      <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-white text-2xl mb-6 text-center">Entrar</h2>
+        <div class="space-y-4">
+          <input
+            type="email"
+            placeholder="Email"
+            class="w-full p-3 border border-gray-700 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="password"
+            placeholder="Senha"
+            class="w-full p-3 border border-gray-700 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
           <button
-            onClick={props.onSwitchToRegister}
-            class="text-blue-500 hover:underline"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded transition"
+            onClick={props.onLogin}
           >
-            Não tem conta? Cadastre-se
+            Entrar
           </button>
+          <p class="text-center text-sm text-gray-400">
+            Não tem conta?{" "}
+            <a
+              class="text-blue-500 hover:underline cursor-pointer"
+              onClick={props.onSwitchToRegister}
+            >
+              Cadastre-se
+            </a>
+          </p>
         </div>
       </div>
     </div>
